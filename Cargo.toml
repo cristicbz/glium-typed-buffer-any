@@ -4,4 +4,4 @@ name = "glium-typed-buffer-any"
 version = "0.1.0"
 
 [dependencies]
-glium = "0.18.0"
+glium = "0.17.0"
