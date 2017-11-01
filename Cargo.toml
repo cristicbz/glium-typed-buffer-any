@@ -1,0 +1,7 @@
+[package]
+authors = ["Cristi Cobzarenco <cristi.cobzarenco@gmail.com>"]
+name = "glium-typed-buffer-any"
+version = "0.1.0"
+
+[dependencies]
+glium = "0.18.0"
