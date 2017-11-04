@@ -3,6 +3,6 @@ authors = ["Cristi Cobzarenco <cristi.cobzarenco@gmail.com>"]
 name = "glium-typed-buffer-any"
 version = "0.1.0"
 
-[dependencies]
-glium = { version = "0.18.0", path = "../glium" }
-
+[dependencies.glium]
+git = "https://github.com/glium/glium"
+rev = "d8dbb443f2da8c3a1dce88ecb4c41070194fbd0b"
