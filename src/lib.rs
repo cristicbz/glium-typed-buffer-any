@@ -1,11 +1,11 @@
 extern crate glium;
 
-use glium::vertex::{Vertex, VertexBuffer, VertexBufferAny, IntoVerticesSource, VerticesSource};
-use glium::buffer::{BufferSlice, BufferMutSlice};
+use glium::buffer::{BufferMutSlice, BufferSlice};
+use glium::vertex::{Vertex, VertexBuffer, VertexBufferAny, VerticesSource};
 use std::any::TypeId;
-use std::ops::Deref;
 use std::error::Error;
 use std::fmt::{Display, Formatter, Result as FmtResult};
+use std::ops::Deref;
 
 /// A type-erased `VertexBuffer` which can be safely borrowed as the original `VertexBuffer<T>`
 /// using a dynamic type check.
@@ -54,9 +54,9 @@ where
     }
 }
 
-impl<'a> IntoVerticesSource<'a> for &'a TypedVertexBufferAny {
-    fn into_vertices_source(self) -> VerticesSource<'a> {
-        self.buffer.into_vertices_source()
+impl<'a> Into<VerticesSource<'a>> for &'a TypedVertexBufferAny {
+    fn into(self) -> VerticesSource<'a> {
+        (&self.buffer).into()
     }
 }
 
