@@ -63,14 +63,10 @@ impl<'a> Into<VerticesSource<'a>> for &'a TypedVertexBufferAny {
 #[derive(Copy, Clone, Debug)]
 pub struct IncorrectTypeError;
 
-impl Error for IncorrectTypeError {
-    fn description(&self) -> &str {
-        "incorrect buffer type"
-    }
-}
+impl Error for IncorrectTypeError {}
 
 impl Display for IncorrectTypeError {
     fn fmt(&self, formatter: &mut Formatter) -> FmtResult {
-        write!(formatter, "{}", self.description())
+        write!(formatter, "incorrect buffer type")
     }
 }
